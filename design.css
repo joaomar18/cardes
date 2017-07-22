@@ -1,0 +1,101 @@
+body{
+text-align:center;
+margin:auto;
+background-color: whitesmoke;
+font-family: Calibri;
+}
+
+#container1{
+display: flex;
+justify-content: center;
+margin:auto;
+background-color: white;
+border:1px solid black;
+width:20%;
+min-width: 100px;
+}
+
+#titulo{
+text-align: center;
+text-shadow: 0.5px 1px 1px 1px;
+background-color: lightgray;
+width:60%;
+margin:1% auto;
+border: 1px solid gray;
+border-radius: 10%;
+min-width: 250px;
+}
+
+
+
+#selecao_tri{
+margin-bottom: 2%;
+}
+
+#container2{
+display: flex;
+justify-content: center;
+margin:2% auto;
+background-color: white;
+border:1px solid black;
+width:40%;
+min-width: 350px;
+}
+
+#calc{
+border: 2px solid grey;
+background-color: white;
+color:black;
+font-weight: bold;
+width:10%;
+cursor:pointer;
+min-width: 80px;
+
+}
+
+#calc:hover{
+background-color: grey;
+border: 2px solid white;
+color:white;
+}
+
+#container4{
+display: flex;
+justify-content: center;
+margin:2% auto;
+background-color: white;
+border:1px solid black;
+width:40%;
+min-width: 330px;
+}
+
+.out{
+margin: auto;
+text-align: center;
+font-family: Calibri;
+color:white;
+font-weight: bold;
+background-color: black;
+}
+
+
+#botao_rolldown{
+text-align: center;
+font-family: Calibri;
+font-weight:bold;
+font-size: 80%;
+border-radius:10%;
+margin:auto;
+background-color: white;
+border: 2px solid gray;
+color: black;
+cursor:pointer;
+}
+
+#botao_rolldown:hover{
+
+background-color: gray;
+border: 2px solid white;
+color: white;
+
+}

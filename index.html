@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="design.css"/>
+<meta charset="utf-8">
+<title>Cargas Trifásicas Desiquilibradas</title>
+</head>
+<body>
+<h1 id="titulo">Cargas Trifásicas Desiquilibradas</h1>
+
+
+<div id ="container1">
+<div id="selecao_tri">
+<h3>Tipo de Ligação</h3>
+<select id="tipo_tri">
+<option value="0">Estrela</option>
+<option value="1">Triângulo</option>
+</select>
+</div>
+</div>
+<div id="container2">
+<div>
+	<h3>Dados</h3>
+	<table id="inputs-tab">
+	<tr>
+	<td>Impedância Fase 1(R+jX):</td>
+	<td><input type="text" id="r_jx_1"/></td>
+	</tr>
+	<tr>
+	<td>Impedância Fase 2(R+jX):</td>
+	<td><input type="text" id="r_jx_2"/></td>
+	</tr>
+	<tr>
+	<td>Impedância Fase 3(R+jX):</td>
+	<td><input type="text" id="r_jx_3"/></td>
+	</tr>
+	</table>
+</div>
+</div>
+
+<div id="container3">
+	<div id="botao">
+	<input type="button" value="Calcular" id="calc" onclick="calcular()">
+	</div>
+</div> 
+
+<div id="container4">
+	<div id="Resultados">
+	<table id="outputs-tab">
+	<tr>
+	<td>Corrente Fase 1 (A):&nbsp;</td>
+	<td><input type="text" id="if_1" class="out" disabled/></td>
+	</tr>
+	<tr>
+	<td>Corrente Fase 2 (A):&nbsp;</td>
+	<td><input type="text" id="if_2" class="out" disabled/></td>
+	</tr>
+	<tr>
+	<td>Corrente Fase 3 (A):&nbsp;</td>
+	<td><input type="text" id="if_3" class="out" disabled/></td>
+	</tr>
+	<tr>
+	<td>Corrente Linha 1 (A):&nbsp;</td>
+	<td><input type="text" id="il_1" class="out" disabled/></td>
+	</tr>
+	<tr>
+	<td>Corrente Linha 2 (A):&nbsp;</td>
+	<td><input type="text" id="il_2" class="out" disabled/></td>
+	</tr>
+	<tr>
+	<td>Corrente Linha 3 (A):&nbsp;</td>
+	<td><input type="text" id="il_3" class="out" disabled/></td>
+	</tr>
+	<tr>
+	<td>Potência Fase 1 (A):&nbsp;</td>
+	<td><input type="text" id="pf_1" class="out" disabled /></td>
+	</tr>
+	<td>Potência Fase 2 (A):&nbsp;</td>
+	<td><input type="text" id="pf_2" class="out" disabled/></td>
+	</tr>
+	<td>Potência Fase 3 (A):&nbsp;</td>
+	<td><input type="text" id="pf_3" class="out" disabled/></td>
+	</tr>
+	<td>Potência Linha 1 (A):&nbsp;</td>
+	<td><input type="text" id="pl_1" class="out" disabled/></td>
+	</tr>
+	<td>Potência Linha 2 (A):&nbsp;</td>
+	<td><input type="text" id="pl_2" class="out" disabled/></td>
+	</tr>
+	<td>Potência Linha 3 (A):&nbsp;</td>
+	<td><input type="text" id="pl_3" class="out" disabled/></td>
+	</tr>
+	</table>
+	</div>
+	</div>
+
+	<input type="button" value="Detalhes" id="botao_rolldown" onclick="rolldown()">
+	<div id="rolldown" hidden>
+	<span>Todas as impedâncias devem ser preenchidas e escritas na forma (R+jX).</span><br>
+	<span>Insira todos os dados para continuar.</span>
+
+	<script src="logic.js" type="text/javascript"></script>
+	</body>
+	</html>
