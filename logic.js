@@ -643,14 +643,22 @@ potencia_linha_3.value = (p_f_33+" "+"W");
 
 //TRIANGULO**********************************************************************************************
 
+
+
+
+
+
+
+
 if(ti==1){
 
 tensao_1 = 230*Math.sqrt(3);
 tensao_2 = 230*Math.sqrt(3);
 tensao_3 = 230*Math.sqrt(3);
-angulo_1 =-30*(Math.PI/180);
-angulo_2 = 30*(Math.PI/180);
-angulo_3 = 90*(Math.PI/180);
+
+angulo_1 = -30*(Math.PI/180);
+angulo_2 =  30*(Math.PI/180);
+angulo_3 =  90*(Math.PI/180);
 
 
 
@@ -743,22 +751,14 @@ corrente_fase_3.value = (ic3+" "+"A");
 
 //CORRENTES DAS LINHAS***********************************************************
 
-var real_v1 = tensao_1*Math.cos(angulo_1);
-var imag_v1 = tensao_1*Math.sin(angulo_1);
-
-var real_v3 = tensao_2*Math.cos(angulo_2);
-var imag_v3 = tensao_2*Math.sin(angulo_2);
-
-var real_v3 = tensao_3*Math.cos(angulo_3);
-var imag_v3 = tensao_3*Math.sin(angulo_3);
-
 var c_z1_mod = tensao_1/modulo_z1;
 var c_z2_mod = tensao_2/modulo_z2;
 var c_z3_mod = tensao_3/modulo_z3;
 
 var c_z1_ang = (angulo_1)-(angulo_z1);
-var c_z2_ang = (angulo_3)-(angulo_z2);
-var c_z3_ang = (angulo_2)-(angulo_z3);
+var c_z2_ang = (angulo_2)-(angulo_z2);
+var c_z3_ang = (angulo_3)-(angulo_z3);
+var c_z1_lol = (-210*(Math.PI/180))-(angulo_z1);
 
 var c_z1_real = c_z1_mod*Math.cos(c_z1_ang);
 var c_z1_imag = c_z1_mod*Math.sin(c_z1_ang);
@@ -769,11 +769,15 @@ var c_z2_imag = c_z2_mod*Math.sin(c_z2_ang);
 var c_z3_real = c_z3_mod*Math.cos(c_z3_ang);
 var c_z3_imag = c_z3_mod*Math.sin(c_z3_ang);
 
-var real_i_l1= c_z1_real+c_z3_real;
-var imag_i_l1= c_z1_imag+c_z3_imag;
+var c_z1_lol_real = c_z1_mod*Math.cos(c_z1_lol);
+var c_z1_lol_imag = c_z1_mod*Math.sin(c_z1_lol);
 
-var real_i_l2= c_z1_real+c_z2_real;
-var imag_i_l2= c_z1_imag+c_z2_imag;
+
+var real_i_l1= c_z1_real+c_z2_real;
+var imag_i_l1= c_z1_imag+c_z2_imag;
+
+var real_i_l2= c_z1_lol_real+c_z3_real;
+var imag_i_l2= c_z1_lol_imag+c_z3_imag;
 
 var real_i_l3 = c_z2_real+c_z3_real;
 var imag_i_l3 = c_z2_imag+c_z3_imag;
@@ -788,6 +792,8 @@ corrente_linha_2.value=(mod_IL2+" "+"A");
 corrente_linha_3.value=(mod_IL3+" "+"A");
 
 //FIM CORRENTE DAS LINHAS
+
+
 
 //ANGULOS CORRENTE***************************************************************************************
 
@@ -853,8 +859,8 @@ var angulo_IL3 = Math.atan(imag_i_l3/real_i_l3)*(Math.PI/180);
 //POTENCIAS FASE
 
 var angulo_c1 = angulo_1-((angulo_1)-(angulo_z1));
-var angulo_c2 = angulo_3-((angulo_3)-(angulo_z2));
-var angulo_c3 = angulo_2-((angulo_2)-(angulo_z3));
+var angulo_c2 = angulo_2-((angulo_2)-(angulo_z2));
+var angulo_c3 = angulo_3-((angulo_3)-(angulo_z3));
 
 var p_c1 = tensao_1*ic1*Math.cos(angulo_c1);
 var p_c2 = tensao_2*ic2*Math.cos(angulo_c2);
@@ -920,7 +926,6 @@ potencia_linha_2.value="Dados Inválidos!";
 potencia_linha_3.value="Dados Inválidos!";
 }
 }
-
 
 //Function RollDown
 
