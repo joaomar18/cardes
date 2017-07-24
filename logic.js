@@ -946,3 +946,25 @@ texto_rolldown.style.display='none';
 keeptrack=false;
 }
 }
+
+
+//IMAGENS
+
+setInterval(imagens, 1);
+
+function imagens(){
+
+var est = document.getElementById("i1");
+var tri = document.getElementById("i2");
+
+if(tipo_inst.value==0){
+est.style.display="block";
+tri.style.display="none";
+}
+if(tipo_inst.value==1){
+est.style.display="none";
+tri.style.display="block";
+}
+
+}
+
